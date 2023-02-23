@@ -14,4 +14,6 @@
 
 int error_handling(int ac, char **av);
 int check_nbr(char const *str);
+int gen_map_wall(char **av);
+int check_generator_type(int ac, char **av);
 #endif
