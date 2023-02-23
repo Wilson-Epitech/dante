@@ -7,7 +7,7 @@
 
 #include "../../include/my.h"
 
-int gen_map_wall(char **av)
+char *gen_map_wall(char **av)
 {
     int length_map = atoi(av[1]);
     int width_map = atoi(av[2]);
@@ -23,5 +23,5 @@ int gen_map_wall(char **av)
         i += 1;
     }
     buffer[i] = '\0';
-    return 0;
+    return buffer;
 }

@@ -12,7 +12,9 @@
     #include <stdlib.h>
     #include <string.h>
 
+char **word_array_delimiter(char const *str, char *delim);
+
 int error_handling(int ac, char **av);
-int gen_map_wall(char **av);
+char *gen_map_wall(char **av);
 int check_generator_type(int ac, char **av);
 #endif
