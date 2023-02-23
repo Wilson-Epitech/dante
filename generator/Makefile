@@ -6,7 +6,6 @@
 ##
 
 SRC =	generator.c									\
-		src/check_nbr.c								\
 		src/error_handling.c						\
 		src/gen_map_wall.c							\
 		src/check_generator.c						\

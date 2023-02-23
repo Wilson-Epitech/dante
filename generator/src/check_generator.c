@@ -9,7 +9,7 @@
 
 int check_generator_type(int ac, char **av)
 {
-    char *perfect_map = "[perfect]";
+    char *perfect_map = "perfect";
     if (ac == 4 && strcmp(perfect_map, av[3]) == 0) {
         return 1;
     }
