@@ -5,7 +5,10 @@
 ## Makefile
 ##
 
-SRC =	generator.c
+SRC =	generator.c									\
+		src/check_nbr.c								\
+		src/error_handling.c						\
+
 
 OBJ =	$(SRC:.c=.o)
 
