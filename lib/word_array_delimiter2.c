@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "my.h"
+#include "../include/my.h"
 
 int is_delimiter(char c, char *delim)
 {

@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "my.h"
+#include "../include/my.h"
 
 char **word_array1(char const *str, char **array, char *delim, int cut_here)
 {

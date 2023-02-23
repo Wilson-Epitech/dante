@@ -12,10 +12,12 @@ int main(int ac, char **av)
     error_handling(ac, av);
     int generator_type = check_generator_type(ac, av);
     if (generator_type == 1) {
-        gen_map_wall(av);
+        char *buffer = gen_map_wall(av);
+        generate_perfect_map(buffer);
     }
     if (generator_type == 2) {
-        gen_map_wall(av);
+        char *buffer = gen_map_wall(av);
+        generate_imperfect_map(buffer);
     }
     return 0;
 }

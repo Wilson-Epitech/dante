@@ -25,3 +25,17 @@ char *gen_map_wall(char **av)
     buffer[i] = '\0';
     return buffer;
 }
+
+int generate_imperfect_map(char *buffer)
+{
+    char **map = word_array_delimiter(buffer, "\n");
+    print_array(map);
+    return (0);
+}
+
+int generate_perfect_map(char *buffer)
+{
+    char **map = word_array_delimiter(buffer, "\n");
+    print_array(map);
+    return (0);
+}
