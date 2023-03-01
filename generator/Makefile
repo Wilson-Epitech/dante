@@ -7,7 +7,10 @@
 
 SRC =	generator.c									\
 		src/error_handling.c						\
-		src/gen_map_wall.c							\
+		src/gen_maps.c								\
+		src/init_all.c 								\
+		src/check_surroundings.c 					\
+		src/is_bloqued.c 							\
 		src/check_generator.c						\
 		../lib/my_strlen.c 							\
 		../lib/word_array_delimiter.c 				\
