@@ -6,6 +6,7 @@
 */
 
 #include "../../include/my.h"
+#include "../../include/generator.h"
 
 int check_generator_type(int ac, char **av)
 {

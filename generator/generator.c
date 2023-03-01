@@ -6,6 +6,7 @@
 */
 
 #include "../include/my.h"
+#include "../include/generator.h"
 
 int main(int ac, char **av)
 {

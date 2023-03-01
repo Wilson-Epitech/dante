@@ -7,6 +7,7 @@
 
 #include "../../include/my.h"
 #include "../../include/struct.h"
+#include "../../include/generator.h"
 #include <time.h>
 
 char *gen_map_wall(char **av)

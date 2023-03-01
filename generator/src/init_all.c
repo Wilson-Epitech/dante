@@ -7,6 +7,7 @@
 
 #include "../../include/my.h"
 #include "../../include/struct.h"
+#include "../../include/generator.h"
 #include <time.h>
 
 int init_values(structure_t *gen, char **map, char **av)

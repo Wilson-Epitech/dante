@@ -7,6 +7,7 @@
 
 #include "../../include/my.h"
 #include "../../include/struct.h"
+#include "../../include/generator.h"
 #include <time.h>
 
 void check_up_and_down(structure_t *gen, char **map)
