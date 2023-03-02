@@ -70,14 +70,33 @@ void attribute_new_cases(structure_t *gen)
     gen->cases[3][1] = gen->y;
 }
 
+void gen_stars(structure_t *gen, char **map)
+{
+
+    if (gen->rand_stars == 0) {
+        int nb_stars = gen->length_map * gen->width_map / 4;
+        for (int i = 0; i != nb_stars; i++) {
+        int rand_nb1 = rand () % gen->length_map;
+        int rand_nb2 = rand () % gen->width_map;
+            map[rand_nb1][rand_nb2] = '*';
+        }
+        gen->exit_loop = 0;
+    }
+
+    if (gen->rand_stars == 1) {
+        gen->exit_loop = 0;
+    }
+
+}
+
 void check_end(structure_t *gen, char **map)
 {
     if (map[gen->length_map][gen->width_map] == '*' )
-        gen->exit_loop = 0;
+        gen_stars(gen, map);
     if (map[gen->length_map - 1][gen->width_map] == '*' ||
     map[gen->length_map][gen->width_map - 1] == '*') {
         map[gen->length_map][gen->width_map] = '*';
-        gen->exit_loop = 0;
+        gen_stars(gen, map);
     } else if (map[gen->length_map - 1][gen->width_map - 1] == '*') {
         gen->rand_number2 = rand () % 2;
         int last_choice[2][2];
@@ -89,6 +108,6 @@ void check_end(structure_t *gen, char **map)
         gen->case_y = last_choice[gen->rand_number2][1];
         map[gen->case_x][gen->case_y] = '*';
         map[gen->length_map][gen->width_map] = '*';
-        gen->exit_loop = 0;
+        gen_stars(gen, map);
     }
 }

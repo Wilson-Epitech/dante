@@ -31,10 +31,26 @@ char *gen_map_wall(char **av)
 
 int generate_imperfect_map(char **av, char *buffer)
 {
+    structure_t *gen = malloc(sizeof(structure_t));
     char **map = word_array_delimiter(buffer, "\n");
-    printf("imperfect map\n");
+    srand(time(NULL));
+    init_all(gen, map, av);
+    int stockpos[gen->size][2];
+    gen->rand_stars = 0;
+
+    while (gen->exit_loop != 0) {
+        check_up_and_down(gen, map);
+        check_left_and_right(gen, map);
+        stockpos[gen->count][0] = gen->x;
+        stockpos[gen->count][1] = gen->y;
+        attribute_new_cases(gen);
+        is_bloqued(gen, map, stockpos);
+        gen->rand_number = rand () % 4;
+        gen->case_x = gen->cases[gen->rand_number][0];
+        gen->case_y = gen->cases[gen->rand_number][1];
+        check_end(gen, map);
+    }
     print_array(map);
-    return (0);
 }
 
 int generate_perfect_map(char **av, char *buffer)
@@ -44,6 +60,7 @@ int generate_perfect_map(char **av, char *buffer)
     srand(time(NULL));
     init_all(gen, map, av);
     int stockpos[gen->size][2];
+    gen->rand_stars = 1;
 
     while (gen->exit_loop != 0) {
         check_up_and_down(gen, map);

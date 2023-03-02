@@ -22,5 +22,6 @@ typedef struct {
     int possibilities;
     int bloqued;
     int size;
+    int rand_stars;
 } structure_t;
 #endif /* !STRUCT_H_ */
