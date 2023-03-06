@@ -37,7 +37,6 @@ int generate_imperfect_map(char **av, char *buffer)
     init_all(gen, map, av);
     int stockpos[gen->size][2];
     gen->rand_stars = 0;
-
     while (gen->exit_loop != 0) {
         check_up_and_down(gen, map);
         check_left_and_right(gen, map);
@@ -51,6 +50,7 @@ int generate_imperfect_map(char **av, char *buffer)
         check_end(gen, map);
     }
     print_array(map);
+    free_array(map);
 }
 
 int generate_perfect_map(char **av, char *buffer)
@@ -61,7 +61,6 @@ int generate_perfect_map(char **av, char *buffer)
     init_all(gen, map, av);
     int stockpos[gen->size][2];
     gen->rand_stars = 1;
-
     while (gen->exit_loop != 0) {
         check_up_and_down(gen, map);
         check_left_and_right(gen, map);
@@ -75,4 +74,5 @@ int generate_perfect_map(char **av, char *buffer)
         check_end(gen, map);
     }
     print_array(map);
+    free_array(map);
 }

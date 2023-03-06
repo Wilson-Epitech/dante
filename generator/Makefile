@@ -7,6 +7,7 @@
 
 SRC =	generator.c									\
 		src/error_handling.c						\
+		src/one_line.c 								\
 		src/gen_maps.c								\
 		src/init_all.c 								\
 		src/check_surroundings.c 					\

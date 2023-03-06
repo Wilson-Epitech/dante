@@ -14,13 +14,16 @@ int check_nbr(char const *str)
         if (str[i] < '0' || str[i] > '9') {
             return 84;
         }
+        if (str[0] == '0') {
+            return 84;
+        }
     }
     return 0;
 }
 
 int error_handling(int ac, char **av)
 {
-    if (ac < 3) {
+    if (ac < 3 || ac > 4) {
         exit(84);
     }
 
