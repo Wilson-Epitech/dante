@@ -21,6 +21,7 @@ int print_char(int **array, MapSize *mapsize, int j, int i)
 int print_array_solver(int **array, MapSize *mapsize)
 {
     int i, j;
+    array[mapsize->height - 1][mapsize->width - 1] = 2;
     for (i = 0; i < mapsize->height; i++) {
         for (j = 0; j < mapsize->width; j++) {
             print_char(array, mapsize, j, i);
