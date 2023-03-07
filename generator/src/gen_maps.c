@@ -38,8 +38,7 @@ int generate_imperfect_map(char **av, char *buffer)
     int stockpos[gen->size][2];
     gen->rand_stars = 0;
     while (gen->exit_loop != 0) {
-        check_up_and_down(gen, map);
-        check_left_and_right(gen, map);
+        check_surroundings(gen, map);
         stockpos[gen->count][0] = gen->x;
         stockpos[gen->count][1] = gen->y;
         attribute_new_cases(gen);
@@ -53,7 +52,7 @@ int generate_imperfect_map(char **av, char *buffer)
     free_array(map);
 }
 
-int generate_perfect_map(char **av, char *buffer)
+int generate_perfect_map_impair(char **av, char *buffer)
 {
     structure_t *gen = malloc(sizeof(structure_t));
     char **map = word_array_delimiter(buffer, "\n");
@@ -62,8 +61,7 @@ int generate_perfect_map(char **av, char *buffer)
     int stockpos[gen->size][2];
     gen->rand_stars = 1;
     while (gen->exit_loop != 0) {
-        check_up_and_down(gen, map);
-        check_left_and_right(gen, map);
+        check_surroundings(gen, map);
         stockpos[gen->count][0] = gen->x;
         stockpos[gen->count][1] = gen->y;
         attribute_new_cases(gen);
@@ -75,4 +73,41 @@ int generate_perfect_map(char **av, char *buffer)
     }
     print_array(map);
     free_array(map);
+}
+
+void lines_of_stars(char **map, int x, int rand_order)
+{
+    for (int y = 0; map[x][y] != '\0'; y++) {
+        if (rand_order == 0 && x % 2 != 0) {
+            map[x][y] = '*';
+        }
+        if (rand_order == 1 && x % 2 == 0) {
+            map[x][y] = '*';
+        }
+    }
+
+}
+
+int generate_perfect_map_pair(char **av, char *buffer)
+{
+    char **map = word_array_delimiter(buffer, "\n");
+    int length = atoi(av[1]);
+    int width = atoi(av[2]);
+    srand(time(NULL));
+    int rand_order = rand () % 2;
+    map[0][0] = '*';
+    map[width - 1][length - 1] = '*';
+
+    for (int x = 0; map[x] != NULL; x++) {
+        lines_of_stars(map, x, rand_order);
+        if (rand_order == 1 && x % 2 != 0) {
+            int rand_star = rand () % length;
+            map[x][rand_star] = '*';
+        }
+        if (rand_order == 0 && x % 2 == 0) {
+            int rand_star = rand () % length;
+            map[x][rand_star] = '*';
+        }
+    }
+    print_array(map);
 }

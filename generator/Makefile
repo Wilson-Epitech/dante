@@ -8,11 +8,13 @@
 SRC =	generator.c									\
 		src/error_handling.c						\
 		src/one_line.c 								\
+		src/check_generator.c						\
 		src/gen_maps.c								\
 		src/init_all.c 								\
 		src/check_surroundings.c 					\
+		src/attribute_new_cases.c 					\
 		src/is_bloqued.c 							\
-		src/check_generator.c						\
+		src/gen_random_stars.c 						\
 		../lib/my_strlen.c 							\
 		../lib/word_array_delimiter.c 				\
 		../lib/word_array_delimiter2.c 				\
