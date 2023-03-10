@@ -15,10 +15,15 @@ void map_dimensions(char *buff, MapSize *mapsize)
         width++;
     }
     mapsize->width = width;
-    for (int i = 0; buff[i] != '\0'; i++) {
+    int i = 0;
+    for (i = 0; buff[i] != '\0'; i++) {
         if (buff[i] == '\n') {
             height++;
         }
     }
-    mapsize->height = height + 1;
+    if (buff[i - 1] == '\n') {
+        mapsize->height = height;
+    } else {
+        mapsize->height = height + 1;
+    }
 }
