@@ -16,6 +16,7 @@ char *open_file(int ac, char **av, char *buff)
     if (sb.st_size == 0)
         exit(84);
     buff = malloc((sizeof(char)) * (sb.st_size + 1));
+    buff[sb.st_size] = '\0';
     fd = open(av[1], O_RDONLY);
     read(fd, buff, sb.st_size);
     close(fd);

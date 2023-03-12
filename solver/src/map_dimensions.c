@@ -11,7 +11,10 @@ void map_dimensions(char *buff, MapSize *mapsize)
 {
     int width = 0;
     int height = 0;
-    while (buff[width] != '\n') {
+    while (buff[width] != '\0') {
+        if (buff[width] == '\n') {
+            break;
+        }
         width++;
     }
     mapsize->width = width;

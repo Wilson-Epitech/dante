@@ -18,7 +18,6 @@ int main(int ac, char **av)
     MapSize mapsize;
     char *buff = NULL;
     int **array = NULL;
-
     error_handling(ac, av, buff);
     buff = open_file(ac, av, buff);
     error_invalid_char_buffer(buff);
@@ -26,10 +25,13 @@ int main(int ac, char **av)
     map_dimensions(buff, &mapsize);
     array = malloc(sizeof(int*) * mapsize.height);
     array = replace_char(array, buff, &mapsize);
-    algo_solv_loop(array, &mapwalk, &mapsize);
+    int check_solve = algo_solv_loop(array, &mapwalk, &mapsize);
+    if (check_solve == -1) {
+        printf("no solution found\n");
+        return 84;
+    }
     print_array_solver(array, &mapsize);
     free(buff);
     free_array_solver(array, &mapsize);
-    free(array);
     return 0;
 }
