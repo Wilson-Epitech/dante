@@ -62,7 +62,7 @@ bool dfs(DfsParams params)
 int algo_solv_loop(int **array, MapWalk *mapwalk, MapSize *mapsize)
 {
     DfsParams params = {0, 0, array, mapsize->height, mapsize->width};
-    if (dfs(params)) {
+    if (dfs(params) && array[mapsize->height - 1][mapsize->width - 1] != 9) {
         return 1;
     } else {
         return -1;

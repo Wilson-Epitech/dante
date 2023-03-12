@@ -27,8 +27,8 @@ int main(int ac, char **av)
     array = replace_char(array, buff, &mapsize);
     int check_solve = algo_solv_loop(array, &mapwalk, &mapsize);
     if (check_solve == -1) {
-        printf("no solution found\n");
-        return 84;
+        printf("no solution found");
+        return 0;
     }
     print_array_solver(array, &mapsize);
     free(buff);
