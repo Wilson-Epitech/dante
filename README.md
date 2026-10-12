@@ -14,7 +14,7 @@
 
 <p align="center"><img src=".github/assets/term-dante.png" alt="Dante's Star" width="820"/></p>
 
-## En deux mots
+## Le projet en quelques mots
 
 Deux programmes : un **générateur** qui crée des labyrinthes parfaits ou imparfaits de la taille qu'on veut, et un **solveur** qui trouve le chemin de l'entrée (en haut à gauche) à la sortie (en bas à droite) et le trace avec des `o`.
 
@@ -24,10 +24,6 @@ Deux programmes : un **générateur** qui crée des labyrinthes parfaits ou impa
 - Résolution par **parcours en largeur** (BFS)
 - Tient de très grandes tailles
 - Gestion des erreurs : arguments, format du labyrinthe, labyrinthe sans solution
-
-## Sous le capot
-
-Le générateur creuse le labyrinthe en vérifiant les voisins de chaque case pour ne jamais créer de boucle (version parfaite). Le solveur part de l'entrée et explore le labyrinthe case par case en largeur, jusqu'à atteindre la sortie, puis marque le chemin.
 
 ## Lancer le projet
 
@@ -43,4 +39,4 @@ make
 
 Yanis Harkouk, Wilson Bordichon
 
-**Ma part :** J'ai écrit le **générateur** (création de la carte, vérification des voisins, gestion d'erreurs), la boucle de résolution du **solveur**, et la structure du projet.
+**Ma partition :** J'ai écrit le **générateur** (création de la carte, vérification des voisins, gestion d'erreurs), la boucle de résolution du **solveur**, et la structure du projet.
