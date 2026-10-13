@@ -39,4 +39,4 @@ make
 
 Yanis Harkouk, Wilson Bordichon
 
-**Ma partition :** J'ai écrit le **générateur** (création de la carte, vérification des voisins, gestion d'erreurs), la boucle de résolution du **solveur**, et la structure du projet.
+**Ma partition :** J'ai écrit le **solveur**, la moitié du **générateur** (création de la carte, vérification des voisins, gestion d'erreurs), une partie de la bibliothèque commune et la structure du projet.
